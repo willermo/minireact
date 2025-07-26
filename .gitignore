@@ -1,0 +1,51 @@
+# Keep .gitkeep files
+!.gitkeep
+
+# Dependency directories
+node_modules/
+dist/
+
+# Environment variables
+.env
+.env.development
+.env.production
+
+# Database files
+*.sqlite
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+.windsurf
+.windsurfrules
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db 
+
+# Certificates
+*.crt
+*.key
+*.pem
+
+# Avatar images
+/backend/storage/avatars/*
+!/backend/storage/avatars/default-avatar.png
+!/backend/storage/avatars/default-avatar.svg
+!/backend/storage/avatars/deleted-user-avatar.png
+!/backend/storage/avatars/deleted-user-avatar.svg
+
+# PDF files
+*.pdf
