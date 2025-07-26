@@ -1,4 +1,4 @@
-name: transcendence
+name: testapp
 services:
   volume-permissions:
     image: busybox

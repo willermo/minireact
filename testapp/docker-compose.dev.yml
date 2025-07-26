@@ -1,4 +1,4 @@
-name: transcendence-dev
+name: testapp-dev
 services:
   backend:
     build:
