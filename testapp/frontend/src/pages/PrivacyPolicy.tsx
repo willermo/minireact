@@ -19,11 +19,11 @@ export default function PrivacyPolicy() {
                 1. Introduction
               </h2>
               <p className="themed-text-secondary mb-4">
-                Welcome to Transcendence ("we," "our," or "us"). We are
-                committed to protecting your personal information and your right
-                to privacy. This Privacy Policy explains how we collect, use,
-                disclose, and safeguard your information when you use our Pong
-                gaming platform.
+                Welcome to testapp ("we," "our," or "us"). We are committed to
+                protecting your personal information and your right to privacy.
+                This Privacy Policy explains how we collect, use, disclose, and
+                safeguard your information when you use our Pong gaming
+                platform.
               </p>
             </section>
 
@@ -49,20 +49,7 @@ export default function PrivacyPolicy() {
               </ul>
 
               <h3 className="text-xl font-medium themed-text-primary mb-3">
-                2.2 Game Data
-              </h3>
-              <p className="themed-text-secondary mb-4">
-                We collect information about your gameplay:
-              </p>
-              <ul className="list-disc pl-6 themed-text-secondary mb-4">
-                <li>Match history and results</li>
-                <li>Tournament participation</li>
-                <li>Game statistics and achievements</li>
-                <li>Online status</li>
-              </ul>
-
-              <h3 className="text-xl font-medium themed-text-primary mb-3">
-                2.3 Technical Data
+                2.2 Technical Data
               </h3>
               <p className="themed-text-secondary mb-4">
                 We automatically collect certain technical information:
@@ -90,10 +77,6 @@ export default function PrivacyPolicy() {
                 <li>
                   <strong>Authentication:</strong> Verifying your identity and
                   securing your account
-                </li>
-                <li>
-                  <strong>Game Services:</strong> Providing multiplayer gaming,
-                  tournaments, and matchmaking
                 </li>
                 <li>
                   <strong>Communication:</strong> Sending important account and

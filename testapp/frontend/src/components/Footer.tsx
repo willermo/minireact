@@ -7,8 +7,7 @@ export default function Footer({ className = "" }: HTMLAttributes) {
       className={`flex flex-col justify-center align-center gap-4 themed-bg text-gray-200 dark:text-gray-300 p-4 text-center mt-8 ${className}`}
     >
       <small>
-        Developed by <strong>Trash&Dance Team</strong> - doriani, tpiras,
-        dborgiani
+        Developed by <strong>minireact team</strong> - willermo
       </small>
       <small>
         <Link to="/privacy-policy">Privacy Policy</Link>

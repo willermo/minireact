@@ -27,7 +27,7 @@ export UID := $(shell id -u)
 export GID := $(shell id -g)
 
 start-prod:
-	docker compose -f docker-compose.prod.yml -p transcendence up --build -d
+	docker compose -f docker-compose.prod.yml -p testapp up --build -d
 	@echo ""
 	@echo "===================================================="
 	@echo "  URL: https://localhost:4443"
@@ -43,7 +43,7 @@ start-dev:
 	@cd backend && npm install
 	@echo "Installing frontend dependencies..."
 	@cd frontend && npm install
-	docker compose -f docker-compose.dev.yml -p transcendence-dev up --build -d
+	docker compose -f docker-compose.dev.yml -p testapp-dev up --build -d
 	@echo ""
 	@echo "===================================================="
 	@echo "  Backend:  Not exposed - proxied from vite or nginx"
@@ -56,46 +56,46 @@ start-both:
 	$(MAKE) start-prod
 
 stop-dev:
-	docker compose -f docker-compose.dev.yml -p transcendence-dev down
+	docker compose -f docker-compose.dev.yml -p testapp-dev down
 
 stop-prod:
-	docker compose -f docker-compose.prod.yml -p transcendence down
+	docker compose -f docker-compose.prod.yml -p testapp down
 
 stop-both:
 	$(MAKE) stop-dev
 	$(MAKE) stop-prod
 
 build-dev:
-	docker compose -f docker-compose.dev.yml -p transcendence-dev build
+	docker compose -f docker-compose.dev.yml -p testapp-dev build
 
 build-prod:
-	docker compose -f docker-compose.prod.yml -p transcendence build
+	docker compose -f docker-compose.prod.yml -p testapp build
 
 logs-dev:
-	docker compose -f docker-compose.dev.yml -p transcendence-dev logs -f
+	docker compose -f docker-compose.dev.yml -p testapp-dev logs -f
 
 logs-prod:
-	docker compose -f docker-compose.prod.yml -p transcendence logs -f
+	docker compose -f docker-compose.prod.yml -p testapp logs -f
 
 # Development shell access
 shell-backend-dev:
-	docker compose -f docker-compose.dev.yml -p transcendence-dev exec backend /bin/sh
+	docker compose -f docker-compose.dev.yml -p testapp-dev exec backend /bin/sh
 
 shell-frontend-dev:
-	docker compose -f docker-compose.dev.yml -p transcendence-dev exec frontend /bin/sh
+	docker compose -f docker-compose.dev.yml -p testapp-dev exec frontend /bin/sh
 
 shell-nginx-dev:
-	docker compose -f docker-compose.dev.yml -p transcendence-dev exec nginx /bin/sh
+	docker compose -f docker-compose.dev.yml -p testapp-dev exec nginx /bin/sh
 
 # Production shell access
 shell-backend-prod:
-	docker compose -f docker-compose.prod.yml -p transcendence exec backend /bin/sh
+	docker compose -f docker-compose.prod.yml -p testapp exec backend /bin/sh
 
 shell-frontend-prod:
-	docker compose -f docker-compose.prod.yml -p transcendence exec frontend /bin/sh
+	docker compose -f docker-compose.prod.yml -p testapp exec frontend /bin/sh
 
 shell-nginx-prod:
-	docker compose -f docker-compose.prod.yml -p transcendence exec nginx /bin/sh
+	docker compose -f docker-compose.prod.yml -p testapp exec nginx /bin/sh
 
 # Shortcut aliases
 shell-dev: shell-backend-dev
@@ -104,24 +104,24 @@ shell-prod: shell-backend-prod
 # Testing commands for container permissions
 test-permissions-dev:
 	@echo "\033[1;33mTesting user permissions in development containers...\033[0m"
-	docker compose -f docker-compose.dev.yml -p transcendence-dev exec backend id
-	docker compose -f docker-compose.dev.yml -p transcendence-dev exec frontend id
-	docker compose -f docker-compose.dev.yml -p transcendence-dev exec nginx id
+	docker compose -f docker-compose.dev.yml -p testapp-dev exec backend id
+	docker compose -f docker-compose.dev.yml -p testapp-dev exec frontend id
+	docker compose -f docker-compose.dev.yml -p testapp-dev exec nginx id
 	@echo "\033[1;32mPermission test completed\033[0m"
 
 test-permissions-prod:
 	@echo "\033[1;33mTesting user permissions in production containers...\033[0m"
-	docker compose -f docker-compose.prod.yml -p transcendence exec backend id
-	docker compose -f docker-compose.prod.yml -p transcendence exec frontend id
-	docker compose -f docker-compose.prod.yml -p transcendence exec nginx id
+	docker compose -f docker-compose.prod.yml -p testapp exec backend id
+	docker compose -f docker-compose.prod.yml -p testapp exec frontend id
+	docker compose -f docker-compose.prod.yml -p testapp exec nginx id
 	@echo "\033[1;32mPermission test completed\033[0m"
 
 # Test file ownership in mounted volumes
 test-file-ownership-dev:
 	@echo "\033[1;33mTesting file ownership in development mounted volumes...\033[0m"
 	@echo "Creating test files in mounted directories..."
-	docker compose -f docker-compose.dev.yml -p transcendence-dev exec backend sh -c "touch /app/data/test_file_backend && ls -la /app/data/test_file_backend"
-	docker compose -f docker-compose.dev.yml -p transcendence-dev exec frontend sh -c "touch /app/dist/test_file_frontend && ls -la /app/dist/test_file_frontend"
+	docker compose -f docker-compose.dev.yml -p testapp-dev exec backend sh -c "touch /app/data/test_file_backend && ls -la /app/data/test_file_backend"
+	docker compose -f docker-compose.dev.yml -p testapp-dev exec frontend sh -c "touch /app/dist/test_file_frontend && ls -la /app/dist/test_file_frontend"
 	@echo "\033[1;32mNow check host ownership of these files with: ls -la backend/data/test_file_backend frontend/dist/test_file_frontend\033[0m"
 
 # Comprehensive permission and ownership test
@@ -145,12 +145,12 @@ test-flow:
 	@echo "Use 'make logs-dev' to see container logs if needed."
 
 prune:
-	@echo "Removing all transcendence containers, networks, and volumes..."
-	docker compose -f docker-compose.dev.yml -p transcendence-dev down --volumes --remove-orphans
-	docker compose -f docker-compose.prod.yml -p transcendence down --volumes --remove-orphans
-	@echo "Removing transcendence-related dangling images..."
-	docker image prune -f --filter "label=com.docker.compose.project=transcendence-dev" 
-	docker image prune -f --filter "label=com.docker.compose.project=transcendence"
+	@echo "Removing all testapp containers, networks, and volumes..."
+	docker compose -f docker-compose.dev.yml -p testapp-dev down --volumes --remove-orphans
+	docker compose -f docker-compose.prod.yml -p testapp down --volumes --remove-orphans
+	@echo "Removing testapp-related dangling images..."
+	docker image prune -f --filter "label=com.docker.compose.project=testapp-dev" 
+	docker image prune -f --filter "label=com.docker.compose.project=testapp"
 	@echo "Clean-up complete"
 
 certs: nginx-certs ensure-backend-certs-dir

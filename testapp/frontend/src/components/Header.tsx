@@ -156,12 +156,12 @@ export default function Header({ className = "" }) {
       <div className="flex items-center justify-between">
         <h1 className="text-xl font-bold">
           <Link to="/" children="Home">
-            Transcendence
+            testapp
           </Link>
         </h1>
         <nav className="flex items-center space-x-4">
-          <Link to="/games" children="Games">
-            Games
+          <Link to="/tests" children="Tests">
+            Tests
           </Link>
           {isAdmin && (
             <Link to="/admin-settings" children="AdminSettings">
@@ -204,8 +204,7 @@ export default function Header({ className = "" }) {
                     alt={`Avatar of ${user.displayName}`}
                     className="size-12 rounded-full"
                   />
-                ) :
-                cachedAvatarData ? (
+                ) : cachedAvatarData ? (
                   <img
                     src={cachedAvatarData}
                     alt="Avatar"

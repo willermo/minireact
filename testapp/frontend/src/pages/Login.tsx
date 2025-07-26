@@ -436,7 +436,8 @@ export default function Login() {
             <h2 className="text-2xl font-bold mb-4">Set Your Password</h2>
             <p className="mb-4">
               Although Google authentication is passwordless, a password is
-              required to participate in games and tournaments.
+              required to check against db to provide access to some specially
+              enforced restricted access areas.
             </p>
             <p className="mb-4">
               Please set a password to continue. It must be at least 8
