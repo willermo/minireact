@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="1600"
+   height="1600"
+   viewBox="0 0 1600 1600"
+   sodipodi:docname="default-avatar.svg"
+   inkscape:version="1.4.2 (1:1.4.2+202505120737+ebf0e940d0)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.501875"
+     inkscape:cx="800"
+     inkscape:cy="800"
+     inkscape:window-width="1854"
+     inkscape:window-height="1011"
+     inkscape:window-x="26"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1">
+    <inkscape:page
+       x="0"
+       y="0"
+       inkscape:label="1"
+       id="page1"
+       width="1600"
+       height="1600"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <path
+     id="path3"
+     d="m 6000,9166.34 c 719.38,0 1304.65,-585.27 1304.65,-1304.66 0,-719.38 -585.27,-1304.64 -1304.65,-1304.64 -719.39,0 -1304.65,585.26 -1304.65,1304.64 0,719.39 585.26,1304.66 1304.65,1304.66 z m 0,-3002.97 c 936.46,0 1698.31,761.86 1698.31,1698.31 0,936.46 -761.85,1698.32 -1698.31,1698.32 -936.46,0 -1698.32,-761.86 -1698.32,-1698.32 0,-936.45 761.86,-1698.31 1698.32,-1698.31"
+     style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     transform="matrix(0.13333333,0,0,-0.13333333,0,1600)" />
+  <path
+     id="path4"
+     d="M 8418.1,4903.26 C 7772.2,5549.16 6913.44,5904.87 6000,5904.87 5086.56,5904.87 4227.79,5549.16 3581.9,4903.26 2936,4257.37 2580.29,3398.61 2580.29,2485.17 V 2440 h 393.67 v 45.17 c 0,1668.56 1357.47,3026.04 3026.04,3026.04 1668.56,0 3026.04,-1357.48 3026.04,-3026.04 V 2440 h 393.67 v 45.17 c 0,913.43 -355.72,1772.19 -1001.61,2418.09"
+     style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     transform="matrix(0.13333333,0,0,-0.13333333,0,1600)" />
+</svg>

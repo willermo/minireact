@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg-primary: #f4f8ff;
+  --color-bg-secondary: #ecf1f8;
+  --color-bg-accent: #3b82f6;
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #4b5563;
+  --color-border: #e5e7eb;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-hover-bg: #e3e4e6;
+}
+
+.dark {
+  --color-bg-primary: #1f2937;
+  --color-bg-secondary: #111827;
+  --color-bg-accent: #2563eb;
+  --color-text-primary: #f9fafb;
+  --color-text-secondary: #d1d5db;
+  --color-border: #374151;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-hover-bg: #1e293b;
+}
+
+.themed-bg {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
+
+.themed-bg-contrast{
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-sec--color-bg-secondary);
+  border-color: var(--color-border);
+}
+
+.themed-card {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 4px var(--color-shadow);
+}
+
+.themed-button {
+  background-color: var(--color-bg-accent);
+  color: white;
+}
+
+.themed-text {
+  color: var(--color-text-primary);
+}
+
+.themed-text-primary {
+  color: var(--color-text-primary);
+}
+
+.themed-text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.themed-table-row:hover {
+  background-color: var(--color-hover-bg);
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: translateY(-100%) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.4s ease-out forwards;
+}
+
+.connect4-canvas {
+  background-color: #2563eb;
+}
+
+.connect4-cell {
+  background-color: var(--color-bg-primary);
+  border-radius: 50%;
+}
