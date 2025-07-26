@@ -1,0 +1,86 @@
+name: transcendence
+services:
+  volume-permissions:
+    image: busybox
+    user: root
+    command: chown -R 1000:1000 /app/data /app/storage /app/dist
+    volumes:
+      - sqlite-data:/app/data
+      - backend-storage:/app/storage
+      - frontend_prod_dist:/app/dist
+    restart: "no"
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+      target: production
+    user: node
+    restart: unless-stopped
+    command: sh -c "/app/scripts/ensure-certificates.sh && npm run migrate:latest:prod && npm run start"
+    env_file:
+      - backend/.env
+      - backend/.env.production
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    volumes:
+      - sqlite-data:/app/data
+      - backend-storage:/app/storage
+    networks:
+      - app-network
+    # No ports mapping in production for backend
+
+    healthcheck:
+      # Use multiple approaches to health check with explicit IPs
+      test: ["CMD", "curl", "-kf", "https://localhost:3000/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      # start_period: 30s
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      target: builder
+    volumes:
+      - frontend_prod_dist:/app/dist
+    networks:
+      - app-network
+    env_file:
+      - frontend/.env
+    # This container will exit after building and copying files
+    command: sh -c "echo 'Frontend build complete' && exit 0"
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file:
+      - ./nginx/.env
+    volumes:
+      - frontend_prod_dist:/usr/share/nginx/html:ro
+    ports:
+      - "4443:443"
+    networks:
+      - app-network
+    depends_on:
+      frontend:
+        condition: service_completed_successfully
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-k", "-f", "https://localhost:443"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  sqlite-data:
+  backend-storage:
+  frontend_prod_dist:

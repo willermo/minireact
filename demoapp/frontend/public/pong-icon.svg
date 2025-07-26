@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="1066.6667"
+   height="1066.6667"
+   viewBox="0 0 1066.6667 1066.6667"
+   sodipodi:docname="pong-icon.svg"
+   inkscape:version="1.4.2 (1:1.4.2+202505120737+ebf0e940d0)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.75281241"
+     inkscape:cx="533.99757"
+     inkscape:cy="533.3334"
+     inkscape:window-width="1854"
+     inkscape:window-height="1011"
+     inkscape:window-x="26"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1">
+    <inkscape:page
+       x="0"
+       y="0"
+       inkscape:label="1"
+       id="page1"
+       width="1066.6667"
+       height="1066.6667"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <g
+     id="group-R5"
+     transform="matrix(-1,0,0,1,1066.6671,0)">
+    <path
+       id="path2"
+       d="M 5805.68,5645.1 C 5230,6642.25 3954.94,6983.88 2957.84,6408.18 1960.69,5832.48 1619.05,4557.46 2194.75,3560.31 c 277.46,-480.56 717.51,-808.32 1210.47,-955.05 l 2622.36,1514.01 c 119.38,500.28 55.56,1045.24 -221.9,1525.83"
+       style="fill:#211c1d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,1066.6667)" />
+    <path
+       id="path3"
+       d="m 5403.43,2913.1 c 298.77,249.54 514.13,571.7 634.68,925.04 L 3663.22,2466.99 c 354.33,-69.92 727.76,-48.55 1082.62,74.18 l 659.97,-1143.15 c 47.39,-82.12 152.43,-110.23 234.53,-62.83 l 356.9,206.05 c 82.1,47.42 110.23,152.4 62.84,234.52 L 5403.43,2913.1"
+       style="fill:#211c1d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,1066.6667)" />
+  </g>
+</svg>

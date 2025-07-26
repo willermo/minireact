@@ -1,0 +1,9 @@
+{
+  "verbose": true,
+  "watch": ["src"],
+  "ext": "ts,json",
+  "ignore": ["src/**/*.test.ts", "src/**/*.spec.ts"],
+  "execMap": {
+    "ts": "node --import tsx"
+  }
+}
